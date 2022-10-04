@@ -20,14 +20,14 @@ const Head = ({ customMeta }: { customMeta?: MetaProps }) => {
       <link rel="canonical" href={`${process.env.NEXT_PUBLIC_WEBSITE_URL}${router.asPath}`} />
       <meta property="og:title" content={meta.title} />
       <meta property="og:type" content={meta.type} />
-      <meta property="og:image" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}${meta.image}`} />
+      {meta.image && <meta property="og:image" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}${meta.image}`} />}
       <meta property="og:url" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}${router.asPath}`} />
       <meta property="og:description" content={meta.desc} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content={process.env.NEXT_PUBLIC_TWITTER_HANDLE} />
       <meta name="twitter:title" content={meta.title} />
       <meta name="twitter:description" content={meta.desc} />
-      <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}${meta.image}`} />
+      {meta.image && <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_WEBSITE_URL}${meta.image}`} />}
     </NextHead>
   );
 };

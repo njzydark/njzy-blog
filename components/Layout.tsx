@@ -14,17 +14,16 @@ const Layout = ({ children, customMeta }: LayoutProps) => {
   return (
     <>
       <Head customMeta={customMeta} />
-      <div className="max-w-3xl px-8 mx-auto">
-        <header>
-          <div className="flex items-center justify-between py-6">
-            <h1 className="m-0 mr-auto font-bold">
+      <div className="max-w-3xl px-8 mx-auto bg-white dark:bg-black">
+        <header className="sticky top-0 bg-white dark:bg-black z-10">
+          <div className="relative flex items-center justify-between py-5">
+            <h1 className="m-0 mr-auto font-bold text-2xl">
               <Link href="/">
                 <span className="text-black cursor-pointer dark:text-white">
                   {process.env.NEXT_PUBLIC_AUTHOR}'S BlOG
                 </span>
               </Link>
             </h1>
-            {/* <Navigation /> */}
             <DarkModeToggle />
           </div>
         </header>
