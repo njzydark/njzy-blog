@@ -62,7 +62,7 @@ export default {
 
 2. 经过上述配置，我们就可以实现不同环境走不同的 BASE_URL 了，但我们会出现一个问题，那就是当我们在代码中直接使用 BASE_URL 时会提示变量不存在，开启*Eslint*的情况下会直接报错，但不影响代码正常运行。
 
-   ![eslint报错](eslint报错提示.png)
+   ![eslint报错](eslint-error.png)
 
    如果要解决掉 Eslint 这个报错提示，我们需要在 _.eslintrc.js_ 配置文件中添加`globals`配置：
 
