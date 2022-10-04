@@ -18,6 +18,7 @@ export type PostItem = {
   readingTime?: string;
   content?: string;
   coverImage?: CoverImage;
+  mtime: Date;
 };
 
 export type Posts = PostItem[];

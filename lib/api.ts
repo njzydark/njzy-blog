@@ -43,7 +43,9 @@ export function slugToFilePath(slug: string) {
 
 async function getPostByFilePath(filePath: string, curSlug?: string) {
   const slug = curSlug || filePathToSlug(filePath);
-  const fileContents = fs.readFileSync(join(POSTS_PATH, filePath), 'utf8');
+  const fileRealPath = join(POSTS_PATH, filePath);
+  const { mtime } = fs.statSync(fileRealPath);
+  const fileContents = fs.readFileSync(fileRealPath, 'utf8');
   const { data, content } = matter(fileContents);
 
   const { text } = readingTime(content);
@@ -53,6 +55,7 @@ async function getPostByFilePath(filePath: string, curSlug?: string) {
     slug,
     content,
     readingTime: text,
+    mtime,
   };
 
   if (post.frontmatter.image) {
