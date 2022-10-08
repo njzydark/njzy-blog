@@ -74,6 +74,6 @@ export function copyImages() {
   const images = glob.sync('**/*.{png,jpg,jpeg,gif,svg,webp}', { cwd: POSTS_PATH });
   images.forEach(image => {
     const imagePath = path.join(process.cwd(), 'public', process.env.NEXT_PUBLIC_POST_IMAGES_PATH, image);
-    fs.copy(join(POSTS_PATH, image), imagePath);
+    fs.copySync(join(POSTS_PATH, image), imagePath);
   });
 }
