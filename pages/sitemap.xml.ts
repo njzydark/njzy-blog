@@ -1,5 +1,3 @@
-import { format, parseISO } from 'date-fns';
-
 import { getAllPosts } from '../lib/api';
 import { PostItem } from '../types/post';
 
@@ -15,11 +13,10 @@ function generateSiteMap(posts: PostItem[]) {
        <loc>${EXTERNAL_DATA_URL}</loc>
      </url>
      ${posts
-       .map(({ slug, mtime }) => {
+       .map(({ slug }) => {
          return `
        <url>
            <loc>${`${EXTERNAL_DATA_URL}/${slug}`}</loc>
-           <lastmod>${format(parseISO(mtime.toISOString()), 'yyyy-MM-dd HH:MM')}</lastmod>
        </url>
      `;
        })
