@@ -67,7 +67,7 @@ ssh deck@IP
 sudo steamos-readonly disable
 ```
 
-执行以下命令刷新 Package 并初始化相关密钥:`
+执行以下命令刷新 Package 并初始化相关密钥:
 
 ```bash
 # Refresh
@@ -82,4 +82,22 @@ sudo pacman-key --populate archlinux
 
 ```bash
 sudo pacman -S docker docker-compose
+```
+
+设置非 root 账号:
+
+```bash
+# 添加 docker 用户组
+sudo groupadd docker
+# 将当前用户添加到 docker 用户组
+sudo usermod -aG docker $USER
+# 激活 docker 用户组
+newgrp docker
+```
+
+启用并设置开机自启:
+
+```bash
+systemctl enable docker
+systemctl start docker
 ```
