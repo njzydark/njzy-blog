@@ -10,8 +10,10 @@ import { PostFrontmatter, PostItem } from '../types/post';
 
 export const POSTS_PATH = path.join(process.cwd(), process.env.NEXT_PUBLIC_POSTS_PATH);
 
-export async function getAllPosts() {
-  copyImages();
+export async function getAllPosts(isNeedCopyImages = false) {
+  if (isNeedCopyImages) {
+    copyImages();
+  }
   const filePaths = glob.sync('**/*.{md,mdx}', { cwd: POSTS_PATH });
   const promises = filePaths.map(async filePath => {
     const post = await getPostByFilePath(filePath);

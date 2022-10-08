@@ -53,7 +53,7 @@ export const Index = ({ posts }: IndexProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const posts = await getAllPosts();
+  const posts = await getAllPosts(true);
 
   return {
     props: { posts: JSON.parse(JSON.stringify(posts)) },
