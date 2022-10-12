@@ -3,6 +3,8 @@ import { useTheme } from 'next-themes';
 import { useEffect } from 'react';
 import { Moon, Sun } from 'react-feather';
 
+import { changeGiscusTheme } from '../utils';
+
 export const DarkModeToggle = () => {
   const { setTheme, resolvedTheme } = useTheme();
 
@@ -13,7 +15,9 @@ export const DarkModeToggle = () => {
   }, [setTheme]);
 
   const handleToggle = () => {
-    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+    const theme = resolvedTheme === 'dark' ? 'light' : 'dark';
+    setTheme(theme);
+    changeGiscusTheme(theme);
   };
 
   return (

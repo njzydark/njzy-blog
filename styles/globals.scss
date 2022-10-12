@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.giscus {
+  @apply max-w-3xl px-8 mx-auto mb-5 bg-white dark:bg-black;
+}
+
 @layer base {
   h1 {
     @apply mb-6 text-3xl font-semibold;

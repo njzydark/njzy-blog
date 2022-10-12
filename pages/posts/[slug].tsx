@@ -11,6 +11,7 @@ import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypeCodeTitles from 'rehype-code-titles';
 import rehypeSlug from 'rehype-slug';
 
+import { Guscus } from '../../components/Giscus';
 import Layout from '../../components/Layout';
 import { getAllPosts, getPostBySlug, slugToFilePath } from '../../lib/api';
 import { rehypeNextImage } from '../../plugins/rehypeNextImage';
@@ -25,13 +26,14 @@ const components = {
 };
 
 type PostPageProps = {
+  slug: string;
   source: MDXRemoteSerializeResult;
   frontmatter: PostFrontmatter;
   coverImage: CoverImage;
   baseDir: string;
 };
 
-const PostPage = ({ source, frontmatter, coverImage, baseDir }: PostPageProps) => {
+const PostPage = ({ slug, source, frontmatter, coverImage }: PostPageProps) => {
   const customMeta: MetaProps = {
     title: frontmatter.title,
     desc: frontmatter.desc || '',
@@ -70,6 +72,7 @@ const PostPage = ({ source, frontmatter, coverImage, baseDir }: PostPageProps) =
         </p>
         <MDXRemote {...source} components={wrappedComponents} />
       </article>
+      <Guscus id={slug} />
     </Layout>
   );
 };
@@ -94,6 +97,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
+      slug: params.slug,
       source: mdxSource,
       frontmatter: JSON.parse(JSON.stringify(frontmatter)),
       coverImage: JSON.parse(JSON.stringify(coverImage || {})),
