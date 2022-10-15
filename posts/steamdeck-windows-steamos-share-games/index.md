@@ -6,7 +6,7 @@ desc: '实现 Windows 和 steamos 可以运行同一个分区上的游戏，避�
 
 完整的 SteamDeck Windows 和 Steamos 共享游戏库教程，实现 Windows 和 steamos 可以运行同一个分区上的游戏，避免重复下载安装
 
-如何安装双系统可见我之前的教程 [SteamDeck Windows 单盘双系统安装教程](../steamdeck-windows-dual-boot/index.mdx)，在此教程里我已经准备了一个游戏安装的分区，下面我们开始正式进入共享游戏库教程
+如何安装双系统可见我之前的教程 [SteamDeck Windows 单盘双系统安装教程](../steamdeck-windows-dual-boot/index.md)，在此教程里我已经准备了一个游戏安装的分区，下面我们开始正式进入共享游戏库教程
 
 ## Windows 游戏库设置
 

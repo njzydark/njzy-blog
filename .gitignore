@@ -35,3 +35,5 @@ yarn-error.log*
 
 # tmp post images
 public/post-images
+
+.obsidian

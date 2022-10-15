@@ -102,7 +102,7 @@ desc: '包含 gparted 分区调整和 refind 双系统引导'
 
 为了后续一键安装脚本可以正常执行，这里建议打开 `Konsole` 终端程序先执行以下命令：
 
-详细过程可见 [在 steamdeck 上开启 ssh 实现远程连接](../steamdeck-install-ssh-docker/index.mdx)
+详细过程可见 [在 steamdeck 上开启 ssh 实现远程连接](../steamdeck-install-ssh-docker/index.md)
 
 ```bash
 # 设置默认登录账号 deck 的密码
