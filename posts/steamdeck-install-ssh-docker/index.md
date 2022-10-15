@@ -1,5 +1,5 @@
 ---
-title: SteamDeck开启SSH并安装Docker
+title: SteamDeck 开启 SSH 并安装 Docker
 date: '2022-10-03'
 desc: '在SteamDeck上开启SSH实现远程登录并安装Docker'
 ---
