@@ -17,15 +17,6 @@ desc: '在 SteamDeck 上开启 Samba 实现文件共享，这样我们就可以�
 sudo pacman -S samba
 ```
 
-然后我们添加 `samba` 用户：
-
-```bash
-# 添加用户 deck 为 SteamDeck 默认的用户名
-sudo smbpasswd -a deck
-# 设置用户名密码
-sudo smbpasswd deck
-```
-
 ## 设置配置文件
 
 `samba` 默认不提供相关配置文件，我们执行以下命令开始手动设置相关配置：
@@ -68,6 +59,15 @@ sudo vim /etc/samba/smb.conf
 - 游戏存档 - `/home/deck/.local/share/Steam/steamapps/compatdata/游戏ID/pfx/drive_c/users/steamuser/Documents/My%20Games/游戏名称`
 - 游戏设置 - `/home/deck/.local/share/Steam/steamapps/compatdata/游戏ID/pfx/drive_c/users/steamuser/AppData/Local/游戏名称`
 - 通过Steam截图的目录 - `/home/deck/.local/share/Steam/userdata/用户ID/760/remote`
+
+## 添加 `samba` 用户
+
+```bash
+# 添加用户 deck 为 SteamDeck 默认的用户名
+sudo smbpasswd -a deck
+# 设置用户名密码
+sudo smbpasswd deck
+```
 
 ## 开启服务
 

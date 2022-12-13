@@ -140,3 +140,46 @@ chmod +x SteamDeck_rEFInd_install.sh
 提示成功之后，我们直接重启就可以看到 `rEFInd` 的引导菜单，默认 5s 不进行操作会进入 `steamos`:
 
 ![dual-boot](./dual-boot.jpeg)
+## 清除 Windows 系统
+
+如果需要清除 Windows 系统，可以按如下步骤操作，主要分为两部分：
+
+- 引导清除
+- Windows 分区清除
+
+### 引导清除
+
+首先进入 steamos 并切换到桌面模式，并打开 `Konsole` 终端，执行以下指令：
+
+```bash
+# 之前没有设置 root 账户的话这里需要设置 root 账号的密码
+sudo passwd root
+# 关闭系统磁盘只读权限
+sudo steamos-readonly disable
+# 切换到 root 账户
+su
+# 进入 efi 目录
+cd /esp/efi
+# 删除 Microsoft 和 Microsoft 目录
+rm -rf Microsoft refind
+# 重启系统
+reboot
+```
+
+### Windows 分区清除
+
+根据之前的分区步骤重新进入 `gparted` ，然后选择之前拆分出来的windows分区, 右键选择删除
+
+![gparted-remove-1](./gparted-remove-1.jpeg)
+
+删除之后选择home分区，右键选择resize/move
+
+![gparted-remove-2](./gparted-remove-2.jpeg)
+
+拖拽右侧的箭头至最右边直到尾部空间为0，然后点击确定
+
+![gparted-remove-3](./gparted-remove-3.jpeg)
+
+通过列表我们可以看到分区已经合并回来了，剩余的2M空间我们忽略不计，然后点击绿色的apply按钮即可将之前的所有分区相关的操作生效，最后重启系统即可
+
+![gparted-remove-4](./gparted-remove-4.jpeg)

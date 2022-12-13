@@ -12,7 +12,7 @@ desc: '以老滚5为例，手把手教你如何给 SteamDeck 上的游戏打 Mod
 
 ## 准备工作
 
-首先我们要能访问 steamos 里的游戏目录，这里大家需要按照我这个教程 [SteamDeck 开启 Samba 实现文件共享](../steamdeck-smba) 进行操作, **教程最后一步 Windows 映射网络驱动器 一定要照做**，操作完成之后我们就可以访问游戏目录了：
+首先我们要能访问 steamos 里的游戏目录，这里大家需要按照我这个教程 [SteamDeck 开启 Samba 实现文件共享](../steamdeck-smba/index.md) 进行操作, **教程最后一步 Windows 映射网络驱动器 一定要照做**，操作完成之后我们就可以访问游戏目录了：
 
 ![windows-smb-mount-4.png](../steamdeck-smba/windows-smb-mount-4.png)
 
